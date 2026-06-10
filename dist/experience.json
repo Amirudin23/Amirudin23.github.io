@@ -1,0 +1,57 @@
+{
+    "experience" : [
+        {
+            "id": 1,
+            "company": "PT Praweda Ciptakarsa Informatika",
+            "location": "West Jakarta",
+            "position": "Project Development Staff",
+            "period": "Dec 2025 - Present",
+            "experience_description": [
+            "Engineered and optimized scalable web applications using Flutter, and Angular, improving application load times and establishing highly maintainable codebases.",
+            "Partnered with cross-functional teams (Back-End, Business Analyst, QA, and Manager) throughout the SDLC to translate complex business requirements into high-fidelity, user-centric features, accelerating feature delivery.",
+            "Implement API integration and support end-to-end application development aligned with enterprise application standards."
+            ],
+            "technologies": ["Flutter", "Angular", "API Integration"]
+        },
+        {
+            "id": 2,
+            "company": "PT Nitoza Indonesia Mandiri",
+            "location": "Tangerang, Banten",
+            "position": "Mobile Developer",
+            "period": "Jun 2021 - Nov 2025",
+            "experience_description": [
+            "Build and optimize cross-platform mobile applications using Flutter with thousands of active users, ensuring application performance, security and maintainability.",
+            "Spearheaded the end-to-end SDLC, from architectural design to successfully launching 16 applications on the Google Play Store and Apple App Store.",
+            "Work closely with cross-functional teams to ensure scalable, high-quality, and user-focused solutions."
+            ],
+            "technologies": ["Flutter", "Dart", "Mobile Development", "App Store", "Play Store"]
+        },
+        {
+            "id": 3,
+            "company": "PT Ngampooz Pintar Sejahtera",
+            "location": "South Jakarta",
+            "position": "Internship",
+            "period": "May 2020 - Aug 2020",
+            "experience_description": [
+            "Engineered and maintained scalable web applications using PHP and MySQL, ensuring performance and reliability.",
+            "Implement API integration, troubleshoot issues, and perform debugging to support application stability.",
+            "Authored comprehensive technical documentation to support development and system understanding."
+            ],
+            "technologies": ["PHP", "MySQL", "API Integration"]
+        },
+        {
+            "id": 4,
+            "company": "Universitas Budi Luhur",
+            "location": "South Jakarta",
+            "position": "Computer Lab Assistant",
+            "period": "Apr 2019 - Mar 2022",
+            "experience_description": [
+            "Deliver technical guidance in programming and information systems practicums.",
+            "Perform hardware and software maintenance, ensuring reliable lab operations.",
+            "Troubleshoot technical issues and support overall laboratory IT activities.",
+            "Helping lecturers and students to facilitate teaching and learning activities"
+            ],
+            "technologies": ["Education", "IT Support", "Technical Support"]
+        }
+    ]
+}
