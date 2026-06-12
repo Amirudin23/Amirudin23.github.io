@@ -7,13 +7,6 @@ const contact = {
   phone: '+625161302279',
   linkedin: 'https://www.linkedin.com/in/amirudin-955121210'
 }
-
-const downloadCV = () => {
-  const link = document.createElement('a')
-  link.href = '/Amirudin-resume.pdf'
-  link.download = 'Amirudin-resume.pdf'
-  link.click()
-}
 </script>
 
 <template>
@@ -24,7 +17,7 @@ const downloadCV = () => {
           <div class="about-card">
             <div class="about-content">
               <div class="about-avatar">
-                <img src="/amirudin.jpg" class="avatar">
+                <img src="/amirudin.jpg" class="avatar" alt="Foto profil Amirudin">
               </div>
               
               <div class="about-info">
@@ -55,12 +48,13 @@ const downloadCV = () => {
                 </div>
                 
                 <div class="actions">
-                  <Button 
-                    label="Download CV" 
-                    icon="pi pi-download" 
-                    @click="downloadCV"
-                    class="download-btn"
-                  />
+                  <a href="/Amirudin-resume.pdf" download="Amirudin-resume.pdf" style="text-decoration: none;">
+                    <Button 
+                      label="Download CV" 
+                      icon="pi pi-download" 
+                      class="download-btn"
+                    />
+                  </a>
                 </div>
               </div>
             </div>
@@ -125,7 +119,7 @@ const downloadCV = () => {
 
 .about-title {
   font-size: 1.3rem;
-  color: #667eea;
+  color: var(--color-primary);
   margin: 0 0 1rem 0;
   font-weight: 600;
 }
@@ -139,8 +133,7 @@ const downloadCV = () => {
 .contact-info {
   margin-bottom: 2rem;
   padding: 1.5rem;
-  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
-  background: linear-gradient(135deg, #334155 0%, #475569 100%) !important;
+  background: var(--gradient-surface) !important;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -180,8 +173,7 @@ const downloadCV = () => {
 }
 
 .download-btn {
-  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important; */
-  background: linear-gradient(135deg, #334155 0%, #475569 100%) !important;
+  background: var(--gradient-surface) !important;
   border: none !important;
   padding: 0.8rem 2rem !important;
   border-radius: 8px !important;

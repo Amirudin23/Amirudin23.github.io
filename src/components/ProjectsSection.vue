@@ -1,28 +1,29 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { computed } from 'vue'
 import Card from 'primevue/card'
 import Button from 'primevue/button'
 import type { Project } from '../model/project'
+import type { Platform } from '../model/project_url'
+import { useFetch } from '../composables/useFetch'
 
 
-const projects = ref<Project[]>([])
-const loading = ref(true)
+const { data, loading } = useFetch<{ projects: Project[] }>('/projects.json')
+const projects = computed(() => data.value?.projects ?? [])
 
 const openUrl = (url: string) => {
   window.open(url, '_blank')
 }
 
-onMounted(async () => {
-  try {
-    const response = await fetch('/projects.json')
-    const data = await response.json()
-    projects.value = data.projects
-    loading.value = false
-  } catch (error) {
-    console.error('Error loading projects:', error)
-    loading.value = false
-  }
-})
+const platformIconMap: Record<Platform, string> = {
+  Web: 'pi-globe',
+  Android: 'pi-android',
+  iOS: 'pi-apple',
+  GitHub: 'pi-github',
+}
+
+function getPlatformIcon(platform: Platform): string {
+  return `pi ${platformIconMap[platform] ?? 'pi-link'}`
+}
 </script>
 
 <template>
@@ -64,7 +65,7 @@ onMounted(async () => {
                   v-for="url in project.project_url"
                   :key="`${project.project_id}-${url.name}`"
                   :label="url.name"
-                  :icon="`pi ${url.platform === 'Web' ? 'pi-globe' : url.platform === 'Android' ? 'pi-android' : url.platform === 'iOS' ? 'pi-apple' : 'pi-link'}`"
+                  :icon="getPlatformIcon(url.platform)"
                   @click="openUrl(url.url)"
                   class="action-btn"
                   text
@@ -94,7 +95,7 @@ onMounted(async () => {
   font-weight: 700;
   margin-bottom: 3rem;
   text-align: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -147,8 +148,7 @@ onMounted(async () => {
 .project-image-placeholder {
   width: 100%;
   height: 100%;
-  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
-  background: linear-gradient(135deg, #334155 0%, #475569 100%) !important;
+  background: var(--gradient-surface) !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,7 +167,7 @@ onMounted(async () => {
   display: inline-block;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #667eea;
+  color: var(--color-primary);
   background-color: #f0f0f0;
   padding: 0.3rem 0.8rem;
   border-radius: 15px;
@@ -199,7 +199,7 @@ onMounted(async () => {
 .tech-badge {
   display: inline-block;
   background-color: #e8eef7;
-  color: #667eea;
+  color: var(--color-primary);
   padding: 0.4rem 0.8rem;
   border-radius: 12px;
   font-size: 0.8rem;
@@ -215,7 +215,7 @@ onMounted(async () => {
 }
 
 .action-btn {
-  color: #667eea !important;
+  color: var(--color-primary) !important;
   font-weight: 600 !important;
   font-size: 0.9rem !important;
   padding: 0.5rem 1rem !important;
