@@ -15,7 +15,7 @@
 
 <style scoped>
 .navbar {
-  background: linear-gradient(135deg, #334155 0%, #475569 100%);
+  background: var(--gradient-surface);
   padding: 1rem 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: sticky;

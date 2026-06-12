@@ -1,23 +1,11 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { computed } from 'vue'
 import Card from 'primevue/card'
-import type { Experience } from '@/model/experience';
+import type { Experience } from '@/model/experience'
+import { useFetch } from '../composables/useFetch'
 
-
-const experiences = ref<Experience[]>([])
-const loading = ref(true)
-
-onMounted(async () => {
-  try {
-    const response = await fetch('/experience.json')
-    const data = await response.json()
-    experiences.value = data.experience
-    loading.value = false
-  } catch (error) {
-    console.error('Error loading experience:', error)
-    loading.value = false
-  }
-})
+const { data, loading } = useFetch<{ experience: Experience[] }>('/experience.json')
+const experiences = computed(() => data.value?.experience ?? [])
 </script>
 
 <template>
@@ -85,7 +73,7 @@ onMounted(async () => {
   font-weight: 700;
   margin-bottom: 3rem;
   text-align: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -126,16 +114,16 @@ onMounted(async () => {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient-primary);
   border: 4px solid white;
-  box-shadow: 0 0 0 2px #667eea;
+  box-shadow: 0 0 0 2px var(--color-primary);
   margin-top: 5px;
 }
 
 .marker-line {
   flex-grow: 1;
   width: 2px;
-  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient-primary);
   margin-top: 10px;
 }
 
@@ -172,13 +160,13 @@ onMounted(async () => {
 
 .position-title {
   font-size: 1.05rem;
-  color: #667eea;
+  color: var(--color-primary);
   font-weight: 600;
   margin: 0;
 }
 
 .period-badge {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient-primary);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -217,7 +205,7 @@ onMounted(async () => {
   content: '▸';
   position: absolute;
   left: 0;
-  color: #667eea;
+  color: var(--color-primary);
   font-weight: bold;
 }
 
@@ -230,8 +218,6 @@ onMounted(async () => {
 
 .tech-tag {
   display: inline-block;
-  /* background-color: #f0f0f0;
-  color: #333; */
   padding: 0.4rem 0.8rem;
   border-radius: 15px;
   font-size: 0.8rem;
@@ -241,9 +227,9 @@ onMounted(async () => {
 }
 
 .tech-tag:hover {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient-primary);
   color: white;
-  border-color: #667eea;
+  border-color: var(--color-primary);
 }
 
 @media (max-width: 768px) {

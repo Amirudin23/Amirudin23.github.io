@@ -8,8 +8,7 @@
 
 <style scoped>
 .footer {
-  /* background-color: #f5f5f5; */
-  background: linear-gradient(135deg, #334155 0%, #475569 100%) !important;
+  background: var(--gradient-surface) !important;
   padding: 2rem 0;
   margin-top: auto;
 }

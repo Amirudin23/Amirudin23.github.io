@@ -4,6 +4,6 @@ export interface Experience {
   location: string
   position: string
   period: string
-  experience_description: string
+  experience_description: string[]
   technologies: string[]
 }

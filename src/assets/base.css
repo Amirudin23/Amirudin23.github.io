@@ -34,6 +34,14 @@
   --color-text: var(--vt-c-text-light-1);
 
   --section-gap: 160px;
+
+  /* Theme color variables */
+  --color-primary: #667eea;
+  --color-primary-end: #764ba2;
+  --color-surface: #334155;
+  --color-surface-end: #475569;
+  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-end) 100%);
+  --gradient-surface: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-end) 100%);
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,7 +1,7 @@
 {
     "experience" : [
         {
-            "id": 1,
+            "experience_id": 1,
             "company": "PT Praweda Ciptakarsa Informatika",
             "location": "West Jakarta",
             "position": "Project Development Staff",
@@ -14,7 +14,7 @@
             "technologies": ["Flutter", "Angular", "API Integration"]
         },
         {
-            "id": 2,
+            "experience_id": 2,
             "company": "PT Nitoza Indonesia Mandiri",
             "location": "Tangerang, Banten",
             "position": "Mobile Developer",
@@ -27,7 +27,7 @@
             "technologies": ["Flutter", "Dart", "Mobile Development", "App Store", "Play Store"]
         },
         {
-            "id": 3,
+            "experience_id": 3,
             "company": "PT Ngampooz Pintar Sejahtera",
             "location": "South Jakarta",
             "position": "Internship",
@@ -40,7 +40,7 @@
             "technologies": ["PHP", "MySQL", "API Integration"]
         },
         {
-            "id": 4,
+            "experience_id": 4,
             "company": "Universitas Budi Luhur",
             "location": "South Jakarta",
             "position": "Computer Lab Assistant",
