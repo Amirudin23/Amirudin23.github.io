@@ -48,13 +48,14 @@ const contact = {
                 </div>
                 
                 <div class="actions">
-                  <a href="/Amirudin-resume.pdf" download="Amirudin-resume.pdf" style="text-decoration: none;">
-                    <Button 
-                      label="Download CV" 
-                      icon="pi pi-download" 
-                      class="download-btn"
-                    />
-                  </a>
+                  <Button 
+                    as="a" 
+                    href="/Amirudin-resume.pdf" 
+                    download="Amirudin-resume.pdf"
+                    label="Download CV" 
+                    icon="pi pi-download" 
+                    class="download-btn"
+                  />
                 </div>
               </div>
             </div>
